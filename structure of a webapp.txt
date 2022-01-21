@@ -1,0 +1,28 @@
+templates:html
+static:css
+python in main folder
+
+python -m venv virtual : creating virtual env for python
+C:\Users\user\python_codes\web_app> virtual\Scripts\activate: activating virtual env in a terminal
+pip install flask : to install flask
+
+PostgreSQL database kullanabilmek için:
+
+pip install psycopg2: database için
+pip install Flask-SQLAlchemy :database için
+
+database'de column'ları oluşturmak için:
+python
+from app import db
+db.create_all
+
+python anywhere'e dosyaları yükledikten sonra database oluşturmamız gerekiyor. MySQL database oluşturup command line'da onun tablosunu oluşuturuyoruz:
+CREATE TABLE data(id SERIAL PRIMARY KEY, email_ VARCHAR(120),height_ INT);
+
+flask app'de:
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://EzgiKalaycioglu:ezgi9961@EzgiKalaycioglu.mysql.pythonanywhere-services.com/EzgiKalaycioglu$height_collector'
+username,pw,@host,db name
+
+mail gönderilemezse:
+Basically you want to create an app specific password, the tutorial for that is below:
+https://support.google.com/accounts/answer/185833?hl=en
